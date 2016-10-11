@@ -8,7 +8,8 @@ ENV NODE_USER=node
 # libelf-dev, libelf1 for flow-bin
 RUN adduser --disabled-login ${NODE_USER} && \
     deps="git ca-certificates libelf-dev libelf1" && \
-    apt-get update && apt-get install --no-install-recommends -y $deps
+    apt-get update && apt-get install --no-install-recommends -y $deps && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR "/home/${NODE_USER}/app"
 USER ${NODE_USER}
