@@ -1,6 +1,6 @@
-FROM gsol/node:6.8.1
+FROM gsol/node:6.9.0
 MAINTAINER Global Solutions co., ltd.
-LABEL version="0.3.1"
+LABEL version="0.4.0"
 
 ENV NODE_USER=node
 WORKDIR "/home/${NODE_USER}/app"
