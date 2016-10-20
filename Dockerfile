@@ -1,9 +1,9 @@
 FROM ubuntu:xenial-20161010
 MAINTAINER Global Solutions co., ltd.
-LABEL version="0.3.0"
+LABEL version="0.3.1"
 
 ENV NPM_CONFIG_LOGLEVEL=info \
-    NODE_VERSION=6.9.0
+    NODE_VERSION=6.9.1
 
 # forked from https://github.com/nodejs/docker-node
 # gpg keys listed at https://github.com/nodejs/node
