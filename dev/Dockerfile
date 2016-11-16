@@ -8,11 +8,10 @@ WORKDIR "/home/${NODE_USER}/app"
 # git for @kadira/react-storybook
 # libelf-dev, libelf1 for flow-bin
 # expect for npm login
-# g++ for fsevents (yarn install)
 RUN adduser --disabled-login ${NODE_USER} && \
     mkdir ../.cache/yarn -p && \
     chown ${NODE_USER}:${NODE_USER} .. -R && \
-    deps="git ca-certificates libelf-dev libelf1 expect g++" && \
+    deps="git ca-certificates libelf-dev libelf1 expect" && \
     apt-get update && apt-get install --no-install-recommends -y $deps && \
     npm install -g yarn && \
     npm cache -f clean && \
