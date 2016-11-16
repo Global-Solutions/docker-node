@@ -1,6 +1,6 @@
 FROM gsol/node:6.9.1
 MAINTAINER Global Solutions co., ltd.
-LABEL version="0.5.0"
+LABEL version="0.6.0"
 
 ENV NODE_USER=node
 WORKDIR "/home/${NODE_USER}/app"
@@ -12,6 +12,8 @@ RUN adduser --disabled-login ${NODE_USER} && \
     chown ${NODE_USER}:${NODE_USER} .. -R && \
     deps="git ca-certificates libelf-dev libelf1 expect" && \
     apt-get update && apt-get install --no-install-recommends -y $deps && \
+    npm install -g yarn && \
+    npm cache -f clean && \
     rm -rf /var/lib/apt/lists/*
 
 USER ${NODE_USER}
