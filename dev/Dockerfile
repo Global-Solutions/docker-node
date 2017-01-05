@@ -1,15 +1,15 @@
 FROM node:6.9.3-alpine
 MAINTAINER Global Solutions co., ltd.
-LABEL version="0.6.7"
+LABEL version="1.0.0"
 
 ENV NODE_USER=node \
-    YARN_VERSION=0.17.10
+    YARN_VERSION=0.18.1
 WORKDIR "/home/${NODE_USER}/app"
 
 # git for @kadira/react-storybook
 # libelf-dev, libelf1 for flow-bin
 # expect for npm login
-# g++, python, make for fsevents (yarn install)
+# g++, python, make for node-sass
 RUN mkdir ../.cache/yarn -p && \
     chown ${NODE_USER}:${NODE_USER} .. -R && \
     deps="git ca-certificates libelf-dev libelf expect g++ python make" && \
