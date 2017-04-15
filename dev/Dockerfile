@@ -1,9 +1,9 @@
-FROM node:6.9.3-alpine
+FROM node:6.10.2-alpine
 MAINTAINER Global Solutions co., ltd.
-LABEL version="1.0.0"
+LABEL version="1.1.0"
 
 ENV NODE_USER=node \
-    YARN_VERSION=0.18.1
+    YARN_VERSION=0.22.0
 WORKDIR "/home/${NODE_USER}/app"
 
 # git for @kadira/react-storybook
