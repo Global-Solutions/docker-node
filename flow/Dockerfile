@@ -1,7 +1,7 @@
 FROM node:6.10.3-alpine
 MAINTAINER Global Solutions co., ltd.
 
-ENV FLOW_VERSION=0.46.0
+ENV FLOW_VERSION=0.47.0
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
  && echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
@@ -27,6 +27,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositori
  && yarn \
  && make test \
  && cp bin/flow /usr/bin/flow \
+ && yarn cache clean \
  && apk del .build-deps-flow \
  && apk add --no-cache elfutils-libelf \
  && cd .. \
