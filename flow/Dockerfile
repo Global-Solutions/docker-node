@@ -1,7 +1,7 @@
-FROM node:6.10.3-alpine
+FROM node:6.11.0-alpine
 MAINTAINER Global Solutions co., ltd.
 
-ENV FLOW_VERSION=0.47.0
+ENV FLOW_VERSION=0.48.0
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
  && echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
@@ -10,7 +10,6 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositori
      alpine-sdk \
      bash \
      diffutils \
-     elfutils-dev \
      git \
      linux-headers \
      m4 \
@@ -18,7 +17,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositori
      ocaml \
      opam \
      curl \
- && opam init -y \
+ && opam init -y --comp 4.03.0 \
  && eval `opam config env` \
  && opam update \
  && opam install -y ocamlfind sedlex \
@@ -29,6 +28,5 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositori
  && cp bin/flow /usr/bin/flow \
  && yarn cache clean \
  && apk del .build-deps-flow \
- && apk add --no-cache elfutils-libelf \
  && cd .. \
  && rm -rf flow ~/.opam /tmp/* /var/lib/apt/lists/*
