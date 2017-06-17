@@ -1,16 +1,14 @@
 FROM gsol/node:6.11.0-flow
 MAINTAINER Global Solutions co., ltd.
-LABEL version="1.4.0"
+LABEL version="2.0.0"
 
 ENV NODE_USER=node
 WORKDIR "/home/${NODE_USER}/app"
 
 # git for @kadira/react-storybook
-# expect for npm login
-# g++, python, make for node-sass
 # findutils for xargs and find
 RUN chown ${NODE_USER}:${NODE_USER} .. -R && \
-    deps="git ca-certificates expect g++ python make patch findutils" && \
+    deps="git ca-certificates patch findutils" && \
     apk add --no-cache $deps && \
     rm -rf /var/lib/apt/lists/*
 
