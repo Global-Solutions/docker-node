@@ -1,4 +1,4 @@
-FROM node:6.10.3-alpine
+FROM node:6.11.0-alpine
 MAINTAINER Global Solutions co., ltd.
 
 ENV FLOW_VERSION=0.47.0
