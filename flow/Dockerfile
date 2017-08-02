@@ -1,7 +1,7 @@
-FROM node:6.11.0-alpine
+FROM node:6.11.2-alpine
 MAINTAINER Global Solutions co., ltd.
 
-ENV FLOW_VERSION=0.48.0
+ENV FLOW_VERSION=0.51.1
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
  && echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
