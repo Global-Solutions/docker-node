@@ -1,6 +1,6 @@
-FROM gsol/node:6.11.0-flow
+FROM gsol/node:6.11.2-flow
 MAINTAINER Global Solutions co., ltd.
-LABEL version="2.0.0"
+LABEL version="2.1.0"
 
 ENV NODE_USER=node
 WORKDIR "/home/${NODE_USER}/app"
