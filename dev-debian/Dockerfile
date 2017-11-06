@@ -1,6 +1,6 @@
-FROM node:6.11.3
+FROM node:8.9.0
 MAINTAINER Global Solutions co., ltd.
-LABEL version="1.1.1"
+LABEL version="1.2.0"
 
 ENV NODE_USER=node
 WORKDIR "/home/${NODE_USER}/app"
