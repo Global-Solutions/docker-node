@@ -1,4 +1,4 @@
-FROM node:6.11.3-alpine
+FROM node:8.9.0-alpine
 MAINTAINER Global Solutions co., ltd.
 LABEL version="2.2.0"
 
