@@ -2,7 +2,7 @@ FROM node:8.9.4-alpine
 MAINTAINER Global Solutions co., ltd.
 LABEL version="2.2.3"
 
-ENV GLIBC_VERSION=2.26-r0
+ENV GLIBC_VERSION=2.27-r0
 ENV NODE_USER=node
 WORKDIR "/home/${NODE_USER}/app"
 
