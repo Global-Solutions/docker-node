@@ -1,6 +1,6 @@
-FROM node:8.12.0-alpine
+FROM node:10.12.0-alpine
 MAINTAINER Global Solutions co., ltd.
-LABEL version="2.5.1"
+LABEL version="2.6.0"
 
 ENV GLIBC_VERSION=2.28-r0
 ENV NODE_USER=node
